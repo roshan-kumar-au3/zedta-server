@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JWT = exports.CONTRACT_ADDRESS = exports.WALLET_PRIVATE_KEY = exports.NODE_URL = exports.API_KEY = exports.POLYGON_GAS_STATION = void 0;
-exports.default = {
+const config = {
     port: 1337,
     host: "localhost",
     dbUri: "mongodb+srv://root:vD7leskFWpJLYMp8@offline-firebase.h0knj.mongodb.net/zedta-nft?retryWrites=true&w=majority",
@@ -24,6 +24,7 @@ exports.default = {
   noxFVOjsY+eSXHZqNybrhWRAzutSnpz/QEf/7Vg97g==
   -----END CERTIFICATE-----`,
 };
+exports.default = config;
 exports.POLYGON_GAS_STATION = 'https://gasstation-mumbai.matic.today/v2';
 exports.API_KEY = "9t7GE5GyCkSVPF8J2h1QYqkD25upy0-s";
 exports.NODE_URL = "https://polygon-mumbai.infura.io/v3/f27760eff972407dac1f24959d92f247";

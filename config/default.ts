@@ -1,4 +1,4 @@
-export default {
+const config = {
   port: 1337,
   host: "localhost",
   dbUri: "mongodb+srv://root:vD7leskFWpJLYMp8@offline-firebase.h0knj.mongodb.net/zedta-nft?retryWrites=true&w=majority",
@@ -21,6 +21,8 @@ export default {
   noxFVOjsY+eSXHZqNybrhWRAzutSnpz/QEf/7Vg97g==
   -----END CERTIFICATE-----`,
 };
+
+export default config;
 export const POLYGON_GAS_STATION = 'https://gasstation-mumbai.matic.today/v2';
 export const API_KEY = "9t7GE5GyCkSVPF8J2h1QYqkD25upy0-s"
 export const NODE_URL = "https://polygon-mumbai.infura.io/v3/f27760eff972407dac1f24959d92f247";

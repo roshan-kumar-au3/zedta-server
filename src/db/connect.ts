@@ -3,7 +3,7 @@ import config from "config";
 import log from "../logger";
 
 async function connect() {
-  const dbUri = config.get("dbUri") as string;
+  const dbUri: string = "mongodb+srv://root:vD7leskFWpJLYMp8@offline-firebase.h0knj.mongodb.net/zedta-nft?retryWrites=true&w=majority";
 
   try {
     await mongoose
