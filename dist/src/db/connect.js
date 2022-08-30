@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
+// import config from "config";
 const logger_1 = __importDefault(require("../logger"));
 function connect() {
     return __awaiter(this, void 0, void 0, function* () {

@@ -1,4 +1,4 @@
-import config from "config";
+// import config from "config";
 import { get } from "lodash";
 import { Request, Response } from "express";
 import { validatePassword } from "../service/user.service";

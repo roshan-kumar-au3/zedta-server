@@ -1,5 +1,5 @@
 import express from "express";
-import config from "config";
+// import config from "config";
 import log from "./logger";
 import connect from "./db/connect";
 import routes from "./routes";
@@ -8,7 +8,7 @@ import swaggerDocs from "./utils/swagger";
 import cors from "cors";
 
 const port: any = process.env.PORT || 1337;
-const host = config.get("host") as string;
+// const host = config.get("host") as string;
 
 const app = express();
 app.use(cors());
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
-  log.info(`Server listing at http://${host}:${port}`);
+  log.info(`Server listing at http://localhost:${port}`);
 
   connect();
 

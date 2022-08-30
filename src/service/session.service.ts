@@ -1,5 +1,5 @@
 import { LeanDocument, FilterQuery, UpdateQuery } from "mongoose";
-import config from "config";
+// import config from "config";
 import { get } from "lodash";
 import { UserDocument } from "../model/user.model";
 import Session, { SessionDocument } from "../model/session.model";

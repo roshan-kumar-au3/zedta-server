@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUserSessionsHandler = exports.invalidateUserSessionHandler = exports.createUserSessionHandler = void 0;
+// import config from "config";
 const lodash_1 = require("lodash");
 const user_service_1 = require("../service/user.service");
 const session_service_1 = require("../service/session.service");
