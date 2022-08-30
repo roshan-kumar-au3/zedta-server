@@ -11,14 +11,14 @@ const routes_1 = __importDefault(require("./routes"));
 const middleware_1 = require("./middleware");
 const swagger_1 = __importDefault(require("./utils/swagger"));
 const cors_1 = __importDefault(require("cors"));
-const port = config_1.default.get("port");
+const port = process.env.PORT || config_1.default.get("port");
 const host = config_1.default.get("host");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(middleware_1.deserializeUser);
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.listen(port, host, () => {
+app.listen(port, () => {
     logger_1.default.info(`Server listing at http://${host}:${port}`);
     (0, connect_1.default)();
     (0, routes_1.default)(app);
