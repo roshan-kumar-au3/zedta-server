@@ -17,7 +17,7 @@ app.use(deserializeUser);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(port, host, () => {
+app.listen(port, () => {
   log.info(`Server listing at http://${host}:${port}`);
 
   connect();
