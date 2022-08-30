@@ -25,3 +25,4 @@ function decode(token) {
     }
 }
 exports.decode = decode;
+//# sourceMappingURL=jwt.utils.js.map

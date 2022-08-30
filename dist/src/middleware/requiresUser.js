@@ -18,3 +18,4 @@ const requiresUser = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
     return next();
 });
 exports.default = requiresUser;
+//# sourceMappingURL=requiresUser.js.map

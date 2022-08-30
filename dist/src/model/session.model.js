@@ -11,3 +11,4 @@ const SessionSchema = new mongoose_1.default.Schema({
 }, { timestamps: true });
 const Session = mongoose_1.default.model("Session", SessionSchema);
 exports.default = Session;
+//# sourceMappingURL=session.model.js.map

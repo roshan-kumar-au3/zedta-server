@@ -29,3 +29,4 @@ function createUserHandler(req, res) {
     });
 }
 exports.createUserHandler = createUserHandler;
+//# sourceMappingURL=user.controller.js.map

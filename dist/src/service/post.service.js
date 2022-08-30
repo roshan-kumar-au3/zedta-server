@@ -21,3 +21,4 @@ function deletePost(query) {
     return post_model_1.default.deleteOne(query);
 }
 exports.deletePost = deletePost;
+//# sourceMappingURL=post.service.js.map

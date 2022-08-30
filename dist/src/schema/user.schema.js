@@ -64,3 +64,4 @@ exports.createUserSessionSchema = (0, yup_1.object)({
             .required("Email is required"),
     }),
 });
+//# sourceMappingURL=user.schema.js.map

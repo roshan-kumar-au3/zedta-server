@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JWT = exports.CONTRACT_ADDRESS = exports.WALLET_PRIVATE_KEY = exports.NODE_URL = exports.API_KEY = exports.POLYGON_GAS_STATION = void 0;
 exports.default = {
     port: 1337,
     host: "localhost",
-    dbUri: "mongodb://localhost:27017/rest-api",
+    dbUri: "mongodb+srv://root:vD7leskFWpJLYMp8@offline-firebase.h0knj.mongodb.net/zedta-nft?retryWrites=true&w=majority",
     saltWorkFactor: 10,
     accessTokenTtl: "60d",
     refreshTokenTtl: "1y",
@@ -23,3 +24,10 @@ exports.default = {
   noxFVOjsY+eSXHZqNybrhWRAzutSnpz/QEf/7Vg97g==
   -----END CERTIFICATE-----`,
 };
+exports.POLYGON_GAS_STATION = 'https://gasstation-mumbai.matic.today/v2';
+exports.API_KEY = "9t7GE5GyCkSVPF8J2h1QYqkD25upy0-s";
+exports.NODE_URL = "https://polygon-mumbai.infura.io/v3/f27760eff972407dac1f24959d92f247";
+exports.WALLET_PRIVATE_KEY = "a91689899d667dd21a64772fe05f9f0eb44330bf85eface26e315666c3084edf";
+exports.CONTRACT_ADDRESS = "0x279008e466051425ef37dc66A38c630a44236D0B";
+exports.JWT = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI2ZWFmMzAzNS00ZTk4LTQ2MmYtODRjZS0xMTY3MThmNTgwNmUiLCJlbWFpbCI6InZhcnVuQGdldHdpc2UuaW4iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJpZCI6IkZSQTEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX0seyJpZCI6Ik5ZQzEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiYWVkOWRmOGRjNWU4YzA4YzNkODMiLCJzY29wZWRLZXlTZWNyZXQiOiI5MTk3ZTIzYzE0YTY5NjViN2NkMzlhNzliNzQ0NWMxNWEwYzE1YmI2MDhhZjNlMDBkZmRhZWIwYThiOWVmN2I3IiwiaWF0IjoxNjYxMjM0MDgxfQ.B5AlVCuxgDher9UIU9ZCSGWNpLKgA2oo8Pjxg7bzi2c";
+//# sourceMappingURL=default.js.map

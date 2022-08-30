@@ -79,31 +79,31 @@ export default function (app: Express) {
   app.delete("/api/sessions", requiresUser, invalidateUserSessionHandler);
 
   // Create a post
-  app.post(
-    "/api/posts",
-    [requiresUser, validateRequest(createPostSchema)],
-    createPostHandler
-  );
+  // app.post(
+  //   "/api/posts",
+  //   [requiresUser, validateRequest(createPostSchema)],
+  //   createPostHandler
+  // );
 
-  // Update a post
-  app.put(
-    "/api/posts/:postId",
-    [requiresUser, validateRequest(updatePostSchema)],
-    updatePostHandler
-  );
+  // // Update a post
+  // app.put(
+  //   "/api/posts/:postId",
+  //   [requiresUser, validateRequest(updatePostSchema)],
+  //   updatePostHandler
+  // );
 
-  // Get a post
-  app.get("/api/posts/:postId", getPostHandler);
+  // // Get a post
+  // app.get("/api/posts/:postId", getPostHandler);
 
-  // Delete a post
-  app.delete(
-    "/api/posts/:postId",
-    [requiresUser, validateRequest(deletePostSchema)],
-    deletePostHandler
-  );
+  // // Delete a post
+  // app.delete(
+  //   "/api/posts/:postId",
+  //   [requiresUser, validateRequest(deletePostSchema)],
+  //   deletePostHandler
+  // );
   
   // upload excel file
-  app.post("/api/excel/upload", requiresUser, uploadFile.single("file"), upload);
+  app.post("/api/excel/upload", requiresUser, uploadFile.array("file", 2), upload);
 
   app.get("/api/course", requiresUser, getCourseHandler)
 }

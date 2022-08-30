@@ -34,3 +34,4 @@ function connect() {
     });
 }
 exports.default = connect;
+//# sourceMappingURL=connect.js.map

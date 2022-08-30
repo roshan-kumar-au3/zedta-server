@@ -43,3 +43,4 @@ function swaggerDocs(app, port) {
     logger_1.default.info(`Docs available at http://localhost:${port}/docs`);
 }
 exports.default = swaggerDocs;
+//# sourceMappingURL=swagger.js.map

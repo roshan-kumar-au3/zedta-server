@@ -57,3 +57,4 @@ function getUserSessionsHandler(req, res) {
     });
 }
 exports.getUserSessionsHandler = getUserSessionsHandler;
+//# sourceMappingURL=session.controller.js.map

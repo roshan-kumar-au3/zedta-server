@@ -65,3 +65,4 @@ function deletePostHandler(req, res) {
     });
 }
 exports.deletePostHandler = deletePostHandler;
+//# sourceMappingURL=post.controller.js.map

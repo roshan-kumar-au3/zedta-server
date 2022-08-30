@@ -9,3 +9,4 @@ function findCourse(query, options = { lean: true }) {
     return course_model_1.default.find(query, {}, options);
 }
 exports.findCourse = findCourse;
+//# sourceMappingURL=course.service.js.map

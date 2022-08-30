@@ -18,3 +18,4 @@ const params = {
 exports.createPostSchema = (0, yup_1.object)(Object.assign({}, payload));
 exports.updatePostSchema = (0, yup_1.object)(Object.assign(Object.assign({}, params), payload));
 exports.deletePostSchema = (0, yup_1.object)(Object.assign({}, params));
+//# sourceMappingURL=post.schema.js.map

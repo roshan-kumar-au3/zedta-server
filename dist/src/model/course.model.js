@@ -14,7 +14,7 @@ const CourseSchema = new mongoose_1.default.Schema({
         default: () => (0, nanoid_1.nanoid)(10),
     },
     user: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "User" },
-    courseName: { type: String, require: true },
+    projectName: { type: String, require: true },
     courseLevel: { type: String, required: true },
     courseCompleted: { type: Boolean, default: false, required: true },
     batchNo: { type: String, required: true },
@@ -22,8 +22,15 @@ const CourseSchema = new mongoose_1.default.Schema({
     endDate: { type: Date, required: true },
     nftName: { type: String, required: true },
     nftIssued: { type: Boolean, default: false, required: true },
-    email: { type: String, required: true },
-    rollNo: { type: String, required: true },
+    // email: { type: String, required: true },
+    // rollNo: { type: String, required: true },
+    walletAddress: { type: String, required: true },
+    projectUserId: { type: String, required: true },
+    expiryDate: { type: Date },
+    nftImage: { type: Object },
+    video: { type: Object },
+    isVideoUploaded: { type: Boolean, default: false },
 }, { timestamps: true });
 const Course = mongoose_1.default.model("Course", CourseSchema);
 exports.default = Course;
+//# sourceMappingURL=course.model.js.map

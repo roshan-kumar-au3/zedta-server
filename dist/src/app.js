@@ -24,3 +24,4 @@ app.listen(port, host, () => {
     (0, routes_1.default)(app);
     (0, swagger_1.default)(app, port);
 });
+//# sourceMappingURL=app.js.map
