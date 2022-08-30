@@ -11,7 +11,7 @@ const routes_1 = __importDefault(require("./routes"));
 const middleware_1 = require("./middleware");
 const swagger_1 = __importDefault(require("./utils/swagger"));
 const cors_1 = __importDefault(require("cors"));
-const port = process.env.PORT || config_1.default.get("port");
+const port = process.env.PORT || 1337;
 const host = config_1.default.get("host");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());

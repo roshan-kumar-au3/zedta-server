@@ -8,12 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUserSessionsHandler = exports.invalidateUserSessionHandler = exports.createUserSessionHandler = void 0;
-const config_1 = __importDefault(require("config"));
 const lodash_1 = require("lodash");
 const user_service_1 = require("../service/user.service");
 const session_service_1 = require("../service/session.service");
@@ -34,7 +30,7 @@ function createUserSessionHandler(req, res) {
         });
         // create refresh token
         const refreshToken = (0, jwt_utils_1.sign)(session, {
-            expiresIn: config_1.default.get("refreshTokenTtl"), // 1 year
+            expiresIn: "1y", // 1 year
         });
         // send refresh & access token back
         return res.send({ accessToken, refreshToken, user });

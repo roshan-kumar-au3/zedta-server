@@ -33,7 +33,7 @@ UserSchema.pre("save", async function (next: mongoose.HookNextFunction) {
   if (!user.isModified("password")) return next();
 
   // Random additional data
-  const salt = await bcrypt.genSalt(config.get("saltWorkFactor"));
+  const salt = await bcrypt.genSalt(10);
 
   const hash = bcrypt.hashSync(user.password, salt);
 

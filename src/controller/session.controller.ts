@@ -29,7 +29,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 
   // create refresh token
   const refreshToken = sign(session, {
-    expiresIn: config.get("refreshTokenTtl"), // 1 year
+    expiresIn: "1y", // 1 year
   });
 
   // send refresh & access token back

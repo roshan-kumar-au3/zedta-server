@@ -7,7 +7,7 @@ import { deserializeUser } from "./middleware";
 import swaggerDocs from "./utils/swagger";
 import cors from "cors";
 
-const port: any = process.env.PORT || config.get("port") as number;
+const port: any = process.env.PORT || 1337;
 const host = config.get("host") as string;
 
 const app = express();

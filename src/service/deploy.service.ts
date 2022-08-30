@@ -5,8 +5,15 @@ import FormData from 'form-data';
 import fs from 'fs';
 import web3 from "web3";
 import ABI from "../../smart_contract/artifacts/abi.json"
-import { CONTRACT_ADDRESS, JWT, POLYGON_GAS_STATION, WALLET_PRIVATE_KEY, NODE_URL } from "../../config/default";
+// import { CONTRACT_ADDRESS, JWT, POLYGON_GAS_STATION, WALLET_PRIVATE_KEY, NODE_URL } from "../../config/default";
 import Web3 from 'web3';
+
+const POLYGON_GAS_STATION = 'https://gasstation-mumbai.matic.today/v2';
+const API_KEY = "9t7GE5GyCkSVPF8J2h1QYqkD25upy0-s"
+const NODE_URL = "https://polygon-mumbai.infura.io/v3/f27760eff972407dac1f24959d92f247";
+const WALLET_PRIVATE_KEY = "a91689899d667dd21a64772fe05f9f0eb44330bf85eface26e315666c3084edf";
+const CONTRACT_ADDRESS = "0x279008e466051425ef37dc66A38c630a44236D0B";
+const JWT = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI2ZWFmMzAzNS00ZTk4LTQ2MmYtODRjZS0xMTY3MThmNTgwNmUiLCJlbWFpbCI6InZhcnVuQGdldHdpc2UuaW4iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJpZCI6IkZSQTEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX0seyJpZCI6Ik5ZQzEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiYWVkOWRmOGRjNWU4YzA4YzNkODMiLCJzY29wZWRLZXlTZWNyZXQiOiI5MTk3ZTIzYzE0YTY5NjViN2NkMzlhNzliNzQ0NWMxNWEwYzE1YmI2MDhhZjNlMDBkZmRhZWIwYThiOWVmN2I3IiwiaWF0IjoxNjYxMjM0MDgxfQ.B5AlVCuxgDher9UIU9ZCSGWNpLKgA2oo8Pjxg7bzi2c";
 
 const deployNFT = async (coursesArray: any, mediaObj: any, isImage: Boolean) => {
 

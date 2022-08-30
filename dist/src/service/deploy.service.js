@@ -17,7 +17,12 @@ const form_data_1 = __importDefault(require("form-data"));
 const fs_1 = __importDefault(require("fs"));
 const web3_1 = __importDefault(require("web3"));
 const abi_json_1 = __importDefault(require("../../smart_contract/artifacts/abi.json"));
-const default_1 = require("../../config/default");
+const POLYGON_GAS_STATION = 'https://gasstation-mumbai.matic.today/v2';
+const API_KEY = "9t7GE5GyCkSVPF8J2h1QYqkD25upy0-s";
+const NODE_URL = "https://polygon-mumbai.infura.io/v3/f27760eff972407dac1f24959d92f247";
+const WALLET_PRIVATE_KEY = "a91689899d667dd21a64772fe05f9f0eb44330bf85eface26e315666c3084edf";
+const CONTRACT_ADDRESS = "0x279008e466051425ef37dc66A38c630a44236D0B";
+const JWT = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI2ZWFmMzAzNS00ZTk4LTQ2MmYtODRjZS0xMTY3MThmNTgwNmUiLCJlbWFpbCI6InZhcnVuQGdldHdpc2UuaW4iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJpZCI6IkZSQTEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX0seyJpZCI6Ik5ZQzEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiYWVkOWRmOGRjNWU4YzA4YzNkODMiLCJzY29wZWRLZXlTZWNyZXQiOiI5MTk3ZTIzYzE0YTY5NjViN2NkMzlhNzliNzQ0NWMxNWEwYzE1YmI2MDhhZjNlMDBkZmRhZWIwYThiOWVmN2I3IiwiaWF0IjoxNjYxMjM0MDgxfQ.B5AlVCuxgDher9UIU9ZCSGWNpLKgA2oo8Pjxg7bzi2c";
 const deployNFT = (coursesArray, mediaObj, isImage) => __awaiter(void 0, void 0, void 0, function* () {
     // Store the Image on IPFS and return the hash.
     let mediaHash;
@@ -50,11 +55,11 @@ const deployNFT = (coursesArray, mediaObj, isImage) => __awaiter(void 0, void 0,
         usersAddress.push(userInfo.walletAddress);
     }
     console.log('List Of Users Address', usersAddress);
-    const provider = new ethers_1.ethers.providers.JsonRpcProvider(default_1.NODE_URL);
-    const signer = new ethers_1.ethers.Wallet(default_1.WALLET_PRIVATE_KEY, provider);
-    const nftContract = new ethers_1.ethers.Contract(default_1.CONTRACT_ADDRESS, abi_json_1.default, signer);
+    const provider = new ethers_1.ethers.providers.JsonRpcProvider(NODE_URL);
+    const signer = new ethers_1.ethers.Wallet(WALLET_PRIVATE_KEY, provider);
+    const nftContract = new ethers_1.ethers.Contract(CONTRACT_ADDRESS, abi_json_1.default, signer);
     const nonce = yield provider.getTransactionCount(signer.address);
-    const estimateGas = yield fetch(default_1.POLYGON_GAS_STATION).then((response) => response.json());
+    const estimateGas = yield fetch(POLYGON_GAS_STATION).then((response) => response.json());
     const maxPriorityFeePerGas = web3_1.default.utils.toWei(Math.ceil(estimateGas.fast.maxPriorityFee).toString(), 'gwei');
     const estimateMaxFeePerGas = estimateGas.estimatedBaseFee + estimateGas.fast.maxPriorityFee;
     const maxFeePerGas = web3_1.default.utils.toWei(Math.ceil(estimateMaxFeePerGas).toString(), 'gwei');
@@ -141,7 +146,7 @@ const pinMetadata = (_data) => __awaiter(void 0, void 0, void 0, function* () {
         url: 'https://api.pinata.cloud/pinning/pinJSONToIPFS',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': default_1.JWT,
+            'Authorization': JWT,
         },
         data: data
     };
@@ -155,7 +160,7 @@ const pinImage = (_data) => __awaiter(void 0, void 0, void 0, function* () {
     const config = {
         method: 'post',
         url: 'https://api.pinata.cloud/pinning/pinFileToIPFS',
-        headers: Object.assign({ 'Authorization': default_1.JWT }, data.getHeaders()),
+        headers: Object.assign({ 'Authorization': JWT }, data.getHeaders()),
         data: data
     };
     const res = yield (0, axios_1.default)(config);
